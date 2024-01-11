@@ -1,0 +1,7 @@
+[build]
+builder = "NIXPACKS"
+nixpacksConfigPath = "nixpacks.toml"
+
+[deploy]
+startCommand = "deno task run"
+restartPolicyType = "ON_FAILURE"
