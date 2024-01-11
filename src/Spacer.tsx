@@ -7,4 +7,4 @@ function Spacer({
 }) {
     return <div tw={`${direction === "horizontal" ? "h" : "w"}-${size}`} />;
 }
-export { Spacer };
+export default Spacer;

@@ -1,7 +1,7 @@
-import { svg2png, initialize } from "npm:svg2png-wasm@1.1.0";
 import satori from "satori";
+import { svg2png, initialize } from "svg2png";
 
-import { Spacer } from "./src/Spacer.tsx";
+import Spacer from "./src/Spacer.tsx";
 import StatsContainer from "./src/StatsContainer.tsx";
 import TitleCard from "./src/TitleCard.tsx";
 import StatsCard from "./src/StatsCard.tsx";
@@ -14,18 +14,22 @@ const overviewBlocks = [
     {
         session: "000",
         career: "15000",
+        label: "Battles",
     },
     {
         session: "9000",
         career: "99999",
+        label: "Avg. Damage",
     },
     {
         session: "00.00%",
         career: "100.00%",
+        label: "Winrate",
     },
     {
         session: "00.00%",
         career: "100.00%",
+        label: "Accuracy",
     },
 ];
 
@@ -34,36 +38,44 @@ const extendedBlocks = [
         {
             session: "000",
             career: "15000",
+            label: "Battles",
         },
         {
             session: "9000",
             career: "99999",
+            label: "Avg. Damage",
         },
         {
             session: "00.00%",
             career: "100.00%",
+            label: "Winrate",
         },
         {
             session: "00.00%",
             career: "100.00%",
+            label: "Accuracy",
         },
     ],
     [
         {
             session: "0",
             career: "1",
+            label: "Battles",
         },
         {
             session: "9000",
             career: "99999",
+            label: "Avg. Damage",
         },
         {
             session: "00.00%",
             career: "100.00%",
+            label: "Winrate",
         },
         {
             session: "99999",
             career: "9999",
+            label: "Accuracy",
         },
     ],
 ];
@@ -72,29 +84,37 @@ const slimBlocks = [
     [
         {
             session: "0",
+            label: "Battles",
         },
         {
             session: "9000",
+            label: "Avg. Damage",
         },
         {
             session: "00.00%",
+            label: "Winrate",
         },
         {
             session: "00.00%",
+            label: "Accuracy",
         },
     ],
     [
         {
             session: "000",
+            label: "Battles",
         },
         {
             session: "9000",
+            label: "Avg. Damage",
         },
         {
             session: "00.00%",
+            label: "Winrate",
         },
         {
             session: "00.00%",
+            label: "Accuracy",
         },
     ],
 ];
@@ -147,6 +167,8 @@ const svg = await satori(
         // debug: true,
     }
 );
+
+Deno.writeTextFileSync("./test.svg", svg);
 
 const pngData = await svg2png(svg, { scale: 1 });
 Deno.writeFileSync("./test.png", pngData);

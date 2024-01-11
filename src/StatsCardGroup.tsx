@@ -1,4 +1,4 @@
-import { Spacer } from "./Spacer.tsx";
+import Spacer from "./Spacer.tsx";
 import StatsCard, { StatsCardProps } from "./StatsCard.tsx";
 
 export default function StatsCardGroup({ cards }: { cards: StatsCardProps[] }) {

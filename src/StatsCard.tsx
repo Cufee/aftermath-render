@@ -1,6 +1,6 @@
 import { JSX } from "preact";
 
-import { Spacer } from "./Spacer.tsx";
+import Spacer from "./Spacer.tsx";
 import { BlockProps } from "./types.d.ts";
 
 export interface StatsCardProps {
